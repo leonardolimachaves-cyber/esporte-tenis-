@@ -3,138 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Match Point | O Portal Acessível do Tênis</title>
+    <title>Match Point | Arena Interativa do Tênis</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- BARRA DE ACESSIBILIDADE FIXA -->
-    <aside id="barra-acessibilidade" aria-label="Painel de Acessibilidade">
-        <span class="acess-label">♿ Acessibilidade:</span>
-        <button onclick="toggleContraste()" title="Modo Alto Contraste">◐ Alto Contraste</button>
-        <button onclick="alterarFonte(1)" title="Aumentar Texto">A +</button>
-        <button onclick="alterarFonte(-1)" title="Diminuir Texto">A -</button>
-    </aside>
+    <!-- PAINEL DE ACESSIBILIDADE AVANÇADO -->
+    <header id="painel-acessibilidade" aria-label="Painel de Acessibilidade Visual">
+        <div class="acess-container">
+            <span class="acess-title">♿ Acessibilidade Visual:</span>
+            
+            <div class="acess-botoes">
+                <!-- Tamanho da Fonte -->
+                <button onclick="alterarFonte(1)" aria-label="Aumentar texto">A +</button>
+                <button onclick="alterarFonte(-1)" aria-label="Diminuir texto">A -</button>
+                
+                <!-- Modos de Contraste -->
+                <button onclick="mudarTema('normal')" class="btn-tema" aria-label="Tema Padrão Vibrante">Padrão</button>
+                <button onclick="mudarTema('alto-contraste')" class="btn-tema" aria-label="Alto Contraste Amarelo e Preto">Alto Contraste</button>
+                <button onclick="mudarTema('modo-claro')" class="btn-tema" aria-label="Modo Claro Alto Brilho">Modo Claro</button>
+                
+                <!-- Daltonismo -->
+                <select id="select-daltonismo" onchange="aplicarDaltonismo(this.value)" aria-label="Selecione filtro para daltonismo">
+                    <option value="">Visão Normal</option>
+                    <option value="protanopia">Protanopia (Sem Vermelho)</option>
+                    <option value="deuteranopia">Deuteranopia (Sem Verde)</option>
+                    <option value="tritanopia">Tritanopia (Sem Azul)</option>
+                </select>
 
-    <!-- CABEÇALHO HERO CENTRALIZADO -->
-    <header class="hero">
-        <div class="hero-container">
-            <span class="badge">O MUNDO DO TÊNIS</span>
-            <h1>MATCH POINT</h1>
-            <p>Os maiores torneios, regras essenciais e a paixão pelo esporte em um só lugar.</p>
+                <!-- Fonte Legível -->
+                <button onclick="toggleFonteDislexia()" aria-label="Alternar para fonte de alta legibilidade">Fonte Legível</button>
+            </div>
         </div>
     </header>
 
-    <!-- NAVEGAÇÃO CENTRALIZADA -->
-    <nav class="nav-bar">
-        <a href="#torneios">Torneios</a>
+    <!-- BANNER PRINCIPAL -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">PLATAFORMA INTERATIVA</span>
+            <h1>MATCH POINT ARENA</h1>
+            <p>Sinta a emoção do tênis com interatividade e acessibilidade total.</p>
+        </div>
+    </section>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav class="nav-bar" aria-label="Navegação Principal">
+        <a href="#simulador">Simulador de Placar</a>
+        <a href="#torneios">Grand Slams</a>
         <a href="#regras">Regras Rápidas</a>
     </nav>
 
-    <!-- CONTEÚDO PRINCIPAL CENTRALIZADO -->
-    <main class="container">
+    <main class="main-container">
 
-        <!-- SEÇÃO TORNEIOS -->
-        <section id="torneios" class="section-block">
-            <div class="header-center">
-                <h2 class="section-title">Os 4 Grand Slams</h2>
-                <div class="title-line"></div>
+        <!-- ELEMENTO INTERATIVO 1: SIMULADOR DE PLACAR DE TÊNIS -->
+        <section id="simulador" class="section-card">
+            <h2 class="section-title">🎮 Simulador Interativo de Placar</h2>
+            <p class="section-sub">Clique nos botões para simular os pontos de uma partida real!</p>
+
+            <div class="placar-box" aria-live="polite">
+                <div class="jogador-box">
+                    <h3>Jogador 1</h3>
+                    <div id="ponto-j1" class="score-display">0</div>
+                    <button onclick="adicionarPonto(1)" class="btn-ponto" aria-label="Ponto para Jogador 1">+ Ponto</button>
+                </div>
+
+                <div class="placar-divider">VS</div>
+
+                <div class="jogador-box">
+                    <h3>Jogador 2</h3>
+                    <div id="ponto-j2" class="score-display">0</div>
+                    <button onclick="adicionarPonto(2)" class="btn-ponto" aria-label="Ponto para Jogador 2">+ Ponto</button>
+                </div>
             </div>
 
-            <div class="card-grid">
-                
-                <article class="card card-ao">
-                    <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=400&q=80" alt="Quadra azul de tênis no Australian Open">
-                    </div>
-                    <div class="card-content">
-                        <span class="tag duro">Quadra Dura</span>
-                        <h3>Australian Open</h3>
-                        <p>Melbourne, Austrália. Conhecido pela velocidade e os jogos sob forte calor.</p>
-                    </div>
-                </article>
-
-                <article class="card card-rg">
-                    <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1530915534664-4ac6423ca938?auto=format&fit=crop&w=400&q=80" alt="Quadra de saibro em Roland Garros">
-                    </div>
-                    <div class="card-content">
-                        <span class="tag saibro">Saibro</span>
-                        <h3>Roland Garros</h3>
-                        <p>Paris, França. O piso mais lento do circuito, exigindo trocas longas de bola.</p>
-                    </div>
-                </article>
-
-                <article class="card card-wb">
-                    <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=400&q=80" alt="Quadra na grama de Wimbledon">
-                    </div>
-                    <div class="card-content">
-                        <span class="tag grama">Grama</span>
-                        <h3>Wimbledon</h3>
-                        <p>Londres, Reino Unido. O torneio mais antigo e tradicional do esporte.</p>
-                    </div>
-                </article>
-
-                <article class="card card-us">
-                    <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=400&q=80" alt="Quadra com iluminação no US Open">
-                    </div>
-                    <div class="card-content">
-                        <span class="tag duro">Quadra Dura</span>
-                        <h3>US Open</h3>
-                        <p>Nova York, EUA. Encerra a temporada com partidas noturnas vibrantes.</p>
-                    </div>
-                </article>
-
+            <div class="placar-controles">
+                <p id="status-game" class="status-texto">Início do Game (0 - 0)</p>
+                <button onclick="reiniciarPlacar()" class="btn-reset">Reiniciar Placar</button>
             </div>
         </section>
 
-        <!-- SEÇÃO REGRAS -->
-        <section id="regras" class="section-block">
-            <div class="header-center">
-                <h2 class="section-title">Regras em Destaque</h2>
-                <div class="title-line"></div>
+        <!-- ELEMENTO INTERATIVO 2: ABAS DOS GRAND SLAMS -->
+        <section id="torneios" class="section-card">
+            <h2 class="section-title">🏆 Explore os Grand Slams</h2>
+            
+            <div class="tab-buttons" role="tablist">
+                <button class="tab-btn active" onclick="mostrarAba('ao')" id="tab-ao" role="tab">Australian Open</button>
+                <button class="tab-btn" onclick="mostrarAba('rg')" id="tab-rg" role="tab">Roland Garros</button>
+                <button class="tab-btn" onclick="mostrarAba('wb')" id="tab-wb" role="tab">Wimbledon</button>
+                <button class="tab-btn" onclick="mostrarAba('us')" id="tab-us" role="tab">US Open</button>
             </div>
 
-            <div class="info-box-grid">
-                <div class="info-box">
-                    <div class="icon-circle icon-yellow">🎾</div>
-                    <h4>Pontuação do Game</h4>
-                    <p>Inicia em 0 e evolui para <strong>15 ➔ 30 ➔ 40 ➔ Game</strong>.</p>
-                </div>
-                <div class="info-box">
-                    <div class="icon-circle icon-orange">⚖️</div>
-                    <h4>Igualdade (Deuce)</h4>
-                    <p>Empate em 40-40 exige <strong>2 pontos seguidos</strong> de vantagem.</p>
-                </div>
-                <div class="info-box">
-                    <div class="icon-circle icon-cyan">🏆</div>
-                    <h4>Como Ganhar um Set</h4>
-                    <p>Vence quem fechar <strong>6 games primeiro</strong> com 2 games de vantagem.</p>
-                </div>
+            <div class="tab-content-container">
+                <article id="content-ao" class="tab-pane active">
+                    <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=500&q=80" alt="Quadra azul de tênis no Australian Open" class="img-compacta">
+                    <span class="tag duro">Quadra Dura</span>
+                    <h3>Australian Open (Melbourne)</h3>
+                    <p>Acontece em janeiro sob o intenso calor australiano. Famoso pelas quadras azuis super rápidas e tecnologia de ponta.</p>
+                </article>
+
+                <article id="content-rg" class="tab-pane">
+                    <img src="https://images.unsplash.com/photo-1530915534664-4ac6423ca938?auto=format&fit=crop&w=500&q=80" alt="Quadra de saibro em Roland Garros" class="img-compacta">
+                    <span class="tag saibro">Saibro</span>
+                    <h3>Roland Garros (Paris)</h3>
+                    <p>O maior desafio de terra batida do mundo. Exige preparo físico extremo devido às trocas longas de bola.</p>
+                </article>
+
+                <article id="content-wb" class="tab-pane">
+                    <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=500&q=80" alt="Quadra de grama em Wimbledon" class="img-compacta">
+                    <span class="tag grama">Grama</span>
+                    <h3>Wimbledon (Londres)</h3>
+                    <p>O torneio mais antigo do esporte. Exige trajes totalmente brancos e partidas velozes na grama natural.</p>
+                </article>
+
+                <article id="content-us" class="tab-pane">
+                    <img src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=500&q=80" alt="Quadra iluminada no US Open" class="img-compacta">
+                    <span class="tag duro">Quadra Dura</span>
+                    <h3>US Open (Nova York)</h3>
+                    <p>Encerrando o ano, é conhecido pelo show de luzes, partidas noturnas eletrizantes e grande público.</p>
+                </article>
             </div>
         </section>
 
     </main>
 
-    <!-- RODAPÉ CENTRALIZADO -->
     <footer>
-        <p>© Match Point Tennis — Desenvolvido com GitHub Pages</p>
+        <p>© Match Point Arena — Desenvolvido com Foco em Acessibilidade e Interatividade</p>
     </footer>
 
-    <!-- SCRIPT DE ACESSIBILIDADE -->
+    <!-- SCRIPTS INTERATIVOS -->
     <script>
-        function toggleContraste() {
-            document.body.classList.toggle('alto-contraste');
+        // --- LÓGICA DO SIMULADOR DE PLACAR ---
+        const pontosOpc = ["0", "15", "30", "40", "Vantagem", "Game!"];
+        let p1 = 0;
+        let p2 = 0;
+
+        function atualizarDisplay() {
+            document.getElementById('ponto-j1').innerText = pontosOpc[p1];
+            document.getElementById('ponto-j2').innerText = pontosOpc[p2];
+
+            let status = document.getElementById('status-game');
+            
+            if (p1 === 5) {
+                status.innerText = "🏆 Jogador 1 Venceu o Game!";
+            } else if (p2 === 5) {
+                status.innerText = "🏆 Jogador 2 Venceu o Game!";
+            } else if (p1 === 3 && p2 === 3) {
+                status.innerText = "⚖️ EMPATE (Deuce) - Próximo ponto ganha Vantagem!";
+            } else {
+                status.innerText = `Placar Atual: ${pontosOpc[p1]} x ${pontosOpc[p2]}`;
+            }
         }
 
-        let tamanho = 100;
-        function alterarFonte(delta) {
-            tamanho += delta * 8;
-            if (tamanho >= 84 && tamanho <= 140) {
-                document.body.style.fontSize = tamanho + '%';
+        function adicionarPonto(jogador) {
+            if (p1 === 5 || p2 === 5) return; // Game encerrado
+
+            if (jogador === 1) {
+                if (p1 === 3 && p2 === 4) { p2 = 3; } // Tira vantagem do J2
+                else if (p1 === 3 && p2 === 3) { p1 = 4; } // Ganha vantagem J1
+                else if (p1 === 4) { p1 = 5; } // Vence
+                else { p1++; }
+            } else {
+                if (p2 === 3 && p1 === 4) { p1 = 3; } // Tira vantagem do J1
+                else if (p1 === 3 && p2 === 3) { p2 = 4; } // Ganha vantagem J2
+                else if (p2 === 4) { p2 = 5; } // Vence
+                else { p2++; }
             }
+            atualizarDisplay();
+        }
+
+        function reiniciarPlacar() {
+            p1 = 0;
+            p2 = 0;
+            atualizarDisplay();
+        }
+
+        // --- LÓGICA DE ABAS ---
+        function mostrarAba(id) {
+            document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById('content-' + id).classList.add('active');
+            document.getElementById('tab-' + id).classList.add('active');
+        }
+
+        // --- LÓGICA DE ACESSIBILIDADE ---
+        let tamanhoFonte = 100;
+        function alterarFonte(delta) {
+            tamanhoFonte += delta * 10;
+            if (tamanhoFonte >= 90 && tamanhoFonte <= 160) {
+                document.body.style.fontSize = tamanhoFonte + '%';
+            }
+        }
+
+        function mudarTema(tema) {
+            document.body.classList.remove('alto-contraste', 'modo-claro');
+            if (tema !== 'normal') {
+                document.body.classList.add(tema);
+            }
+        }
+
+        function aplicarDaltonismo(filtro) {
+            document.body.classList.remove('protanopia', 'deuteranopia', 'tritanopia');
+            if (filtro) {
+                document.body.classList.add(filtro);
+            }
+        }
+
+        function toggleFonteDislexia() {
+            document.body.classList.toggle('fonte-dislexia');
         }
     </script>
 </body>
