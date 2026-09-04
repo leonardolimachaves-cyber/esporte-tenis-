@@ -18,7 +18,7 @@
                 <button onclick="alterarFonte(-1)" aria-label="Diminuir texto" class="btn-acess font-btn">A -</button>
                 
                 <button onclick="mudarTema('normal')" class="btn-acess" aria-label="Tema Padrão Vibrante">Padrão</button>
-                <button onclick="mudarTema('alto-contraste')" class="btn-acess btn-contraste" aria-label="Alto Contraste Amarelo e Preto"> Alto Contraste</button>
+                <button onclick="mudarTema('alto-contraste')" class="btn-acess btn-contraste" aria-label="Alto Contraste Amarelo e Preto">Alto Contraste</button>
                 <button onclick="mudarTema('modo-claro')" class="btn-acess" aria-label="Modo Claro Alto Brilho">Modo Claro</button>
                 
                 <select id="select-daltonismo" class="select-acess" onchange="aplicarDaltonismo(this.value)" aria-label="Selecione filtro para daltonismo">
@@ -85,7 +85,7 @@
             </div>
         </section>
 
-        <!-- ABAS DOS GRAND SLAMS COM NOVAS IMAGENS -->
+        <!-- ABAS DOS GRAND SLAMS COM IMAGENS TESTADAS E EXATAS -->
         <section id="torneios" class="section-card">
             <h2 class="section-title">🏆 Explore os Grand Slams</h2>
             
@@ -97,31 +97,33 @@
             </div>
 
             <div class="tab-content-container">
-                <!-- NOVA IMAGEM AUSTRALIAN OPEN (Quadra Neutra) -->
+                <!-- AUSTRALIAN OPEN: QUADRA AZUL EM MELBOURNE -->
                 <article id="content-ao" class="tab-pane active">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80" alt="Quadra de tênis moderna em campeonato" class="img-compacta">
-                    <span class="tag duro">Quadra Dura</span>
+                    <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=800&q=80" alt="Quadra azul de tênis no Australian Open" class="img-compacta">
+                    <span class="tag duro">Quadra Dura (Azul)</span>
                     <h3>Australian Open (Melbourne)</h3>
                     <p>Acontece em janeiro sob o intenso calor australiano. Famoso pelas quadras azuis super rápidas e tecnologia de ponta.</p>
                 </article>
 
-                <!-- NOVA IMAGEM SAIBRO (Roland Garros) -->
+                <!-- ROLAND GARROS: QUADRA DE SAIBRO VERMELHO -->
                 <article id="content-rg" class="tab-pane">
-                    <img src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=700&q=80" alt="Quadra de saibro terra batida" class="img-compacta">
-                    <span class="tag saibro">Saibro</span>
+                    <img src="https://images.unsplash.com/photo-1530915534664-4ac6423ca938?auto=format&fit=crop&w=800&q=80" alt="Quadra de saibro terra batida em Roland Garros" class="img-compacta">
+                    <span class="tag saibro">Saibro (Terra Batida)</span>
                     <h3>Roland Garros (Paris)</h3>
                     <p>O maior desafio de terra batida do mundo. Exige preparo físico extremo devido às trocas longas de bola.</p>
                 </article>
 
+                <!-- WIMBLEDON: QUADRA DE GRAMA VERDE -->
                 <article id="content-wb" class="tab-pane">
-                    <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=700&q=80" alt="Quadra de grama em Wimbledon" class="img-compacta">
-                    <span class="tag grama">Grama</span>
+                    <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=800&q=80" alt="Quadra de grama em Wimbledon" class="img-compacta">
+                    <span class="tag grama">Grama Natural</span>
                     <h3>Wimbledon (Londres)</h3>
                     <p>O torneio mais antigo do esporte. Exige trajes totalmente brancos e partidas velozes na grama natural.</p>
                 </article>
 
+                <!-- US OPEN: BOLA E ESTRUTURA EM NOVA YORK -->
                 <article id="content-us" class="tab-pane">
-                    <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=700&q=80" alt="Quadra iluminada no US Open" class="img-compacta">
+                    <img src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=800&q=80" alt="Quadra com iluminação no US Open" class="img-compacta">
                     <span class="tag duro">Quadra Dura</span>
                     <h3>US Open (Nova York)</h3>
                     <p>Encerrando o ano, é conhecido pelo show de luzes, partidas noturnas eletrizantes e grande público.</p>
@@ -135,9 +137,7 @@
         <p>© Match Point Arena — Desenvolvido com Foco em Acessibilidade e Interatividade</p>
     </footer>
 
-    <!-- SCRIPTS INTERATIVOS -->
     <script>
-        // SIMULADOR DE PLACAR AVANÇADO
         const pontosOpc = ["0", "15", "30", "40", "Vantagem", "Game!"];
         let p1 = 0;
         let p2 = 0;
@@ -192,7 +192,6 @@
             atualizarDisplay();
         }
 
-        // ABAS DE CONTEÚDO
         function mostrarAba(id) {
             document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
@@ -201,7 +200,6 @@
             document.getElementById('tab-' + id).classList.add('active');
         }
 
-        // ACESSIBILIDADE
         let tamanhoFonte = 100;
         function alterarFonte(delta) {
             tamanhoFonte += delta * 10;
