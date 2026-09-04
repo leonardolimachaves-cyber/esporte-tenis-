@@ -7,50 +7,88 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <div id="barra-acessibilidade" role="region" aria-label="Acessibilidade">
+        <button id="btn-contraste" onclick="toggleContraste()" aria-label="Alternar Alto Contraste">Alto Contraste</button>
+        <button onclick="alterarFonte(1)" aria-label="Aumentar tamanho do texto">A +</button>
+        <button onclick="alterarFonte(-1)" aria-label="Diminuir tamanho do texto">A -</button>
+    </div>
+
     <header>
         <h1>Central do Tênis</h1>
         <p>Tudo sobre o universo das quadras</p>
     </header>
 
-    <nav>
+    <nav aria-label="Navegação Principal">
         <a href="#torneios">Torneios</a>
         <a href="#regras">Regras Básicas</a>
-        <a href="#superficies">Superfícies</a>
     </nav>
 
-    <div class="container">
+    <main class="container">
         <section id="torneios">
-            <h2 style="margin-top:20px;">Os Grand Slams</h2>
+            <h2>Os Quatro Grand Slams</h2>
             <div class="card-grid">
-                <div class="card">
+                
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=500&q=80" alt="Quadra azul de tênis no Australian Open" class="card-img">
                     <h3>Australian Open</h3>
-                    <p>Jogado em quadra dura no início do ano. Conhecido pelo alto calor e dinâmica rápida.</p>
-                </div>
-                <div class="card">
+                    <p><strong>Piso:</strong> Quadra Dura</p>
+                    <p>Jogado em Melbourne no início do ano sob forte calor. Conhecido pela velocidade e pisos sintéticos.</p>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1530915534664-4ac6423ca938?auto=format&fit=crop&w=500&q=80" alt="Quadra de saibro vermelho com bolinha de tênis" class="card-img">
                     <h3>Roland Garros</h3>
-                    <p>O maior torneio de saibro do mundo, exigindo alto preparo físico e trocas longas de bola.</p>
-                </div>
-                <div class="card">
+                    <p><strong>Piso:</strong> Saibro (Terra Batida)</p>
+                    <p>Disputado em Paris, é o torneio mais exigente fisicamente devido às trocas longas de bola.</p>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=500&q=80" alt="Quadra de tênis na grama verde com raquete" class="card-img">
                     <h3>Wimbledon</h3>
-                    <p>O torneio mais antigo do mundo, jogado na grama tradicional com trajes obrigatoriamente brancos.</p>
-                </div>
-                <div class="card">
+                    <p><strong>Piso:</strong> Grama</p>
+                    <p>O torneio mais antigo do mundo, realizado em Londres. Exige trajes 100% brancos e jogo muito rápido.</p>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=500&q=80" alt="Quadra de tênis com iluminação noturna" class="card-img">
                     <h3>US Open</h3>
-                    <p>Disputado em quadra dura em Nova York, com grande estrutura e jogos noturnos agitados.</p>
-                </div>
+                    <p><strong>Piso:</strong> Quadra Dura</p>
+                    <p>Realizado em Nova York, fecha a temporada dos Grand Slams com grandes jogos noturnos e muita energia.</p>
+                </article>
+
             </div>
         </section>
 
-        <section id="regras" style="margin-top:40px;">
-            <h2>Regras Básicas de Pontuação</h2>
-            <div class="card" style="margin-top:15px;">
-                <p>A pontuação no tênis avança em <strong>15, 30, 40 e Game</strong>. Se ambos empatarem em 40 (Deuce), é necessário abrir 2 pontos de vantagem (Vantagem e Game) para vencer o game. Um set geralmente é vencido ao atingir 6 games.</p>
+        <section id="regras" style="margin-top: 40px;">
+            <h2>Regras Fundamentais</h2>
+            <div class="card" style="margin-top: 15px;">
+                <h3>Pontuação do Game</h3>
+                <p>A contagem de pontos segue a ordem: <strong>15, 30, 40 e Game</strong>.</p>
+                <p>Se o placar empatar em 40-40 (chamado de <em>Deuce</em> ou Igualdade), o jogador precisa abrir 2 pontos seguidos de vantagem (Vantagem e Game) para vencer.</p>
+
+                <h3 style="margin-top: 15px;">Sets e Partida</h3>
+                <p>Para vencer um Set, é preciso ganhar 6 games, com no mínimo 2 games de vantagem (ex: 6x4). Em caso de empate em 6x6, joga-se um desempate chamado <em>Tie-break</em>.</p>
             </div>
         </section>
-    </div>
+    </main>
 
     <footer>
-        <p>Projeto de Tênis hospedado no GitHub Pages</p>
+        <p>Projeto Acessível sobre Tênis hospedado no GitHub Pages</p>
     </footer>
+
+    <script>
+        function toggleContraste() {
+            document.body.classList.toggle('alto-contraste');
+        }
+
+        let tamanhoAtual = 100;
+        function alterarFonte(delta) {
+            tamanhoAtual += delta * 10;
+            if (tamanhoAtual >= 80 && tamanhoAtual <= 150) {
+                document.body.style.fontSize = tamanhoAtual + '%';
+            }
+        }
+    </script>
 </body>
 </html>
