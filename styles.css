@@ -17,19 +17,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: background-color 0.3s, color 0.3s;
 }
 
-/* PAINEL DE ACESSIBILIDADE VIBRANTE */
+/* PAINEL DE ACESSIBILIDADE DE ALTA LEGIBILIDADE */
 #painel-acessibilidade {
     width: 100%;
-    background: #161b22;
-    padding: 12px 20px;
-    border-bottom: 3px solid #00f2fe;
+    background: #000000;
+    padding: 14px 20px;
+    border-bottom: 4px solid #ccff00;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .acess-container {
@@ -39,37 +37,46 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .acess-title {
-    font-weight: bold;
-    color: #00f2fe;
-    font-size: 0.95rem;
+    font-weight: 900;
+    color: #ccff00;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
 }
 
 .acess-botoes {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
 }
 
-.acess-botoes button, .acess-botoes select {
-    background: #21262d;
-    color: #ffffff;
-    border: 1px solid #30363d;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 0.85rem;
-    transition: all 0.2s;
-}
-
-.acess-botoes button:hover, .acess-botoes select:hover {
-    background: #00f2fe;
+/* BOTÕES DE ACESSIBILIDADE DE ALTO DESTAQUE */
+.btn-acess, .select-acess {
+    background: #ffffff;
     color: #000000;
-    border-color: #00f2fe;
+    border: 2px solid #ffffff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    transition: all 0.2s ease;
+}
+
+.btn-acess:hover, .select-acess:hover {
+    background: #ccff00;
+    color: #000000;
+    border-color: #ccff00;
+    transform: scale(1.05);
+}
+
+.btn-contraste {
+    background: #ffff00;
+    color: #000000;
 }
 
 /* HERO SECTION */
@@ -78,24 +85,22 @@ body {
     background: linear-gradient(135deg, #09203f 0%, #537895 100%);
     text-align: center;
     padding: 50px 20px;
-    border-bottom: 4px solid #38ef7d;
+    border-bottom: 4px solid #ccff00;
 }
 
 .badge {
-    background: #38ef7d;
+    background: #ccff00;
     color: #000;
     font-weight: 900;
     padding: 4px 12px;
     border-radius: 12px;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
 }
 
 .hero h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     color: #ffffff;
     margin: 10px 0;
-    text-shadow: 0 0 10px rgba(0,242,254,0.5);
 }
 
 .hero p {
@@ -115,18 +120,15 @@ body {
 }
 
 .nav-bar a {
-    color: #00f2fe;
+    color: #ccff00;
     text-decoration: none;
     font-weight: bold;
     padding: 6px 14px;
     border-radius: 6px;
+    font-size: 1.05rem;
 }
 
-.nav-bar a:hover {
-    background: rgba(0,242,254,0.15);
-}
-
-/* CONTAINER PRINCIPAL */
+/* MAIN CONTAINER */
 .main-container {
     width: 100%;
     max-width: 900px;
@@ -141,30 +143,28 @@ body {
     padding: 25px;
     border-radius: 12px;
     border: 2px solid #30363d;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 
 .section-title {
-    color: #38ef7d;
-    font-size: 1.6rem;
+    color: #ccff00;
+    font-size: 1.8rem;
     margin-bottom: 5px;
 }
 
 .section-sub {
     color: #8b949e;
     margin-bottom: 20px;
-    font-size: 0.95rem;
 }
 
-/* SIMULADOR DE PLACAR INTERATIVO */
+/* SIMULADOR DE PLACAR MELHORADO */
 .placar-box {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background: #0d1117;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #30363d;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #ccff00;
 }
 
 .jogador-box {
@@ -172,33 +172,51 @@ body {
 }
 
 .score-display {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 900;
-    color: #00f2fe;
-    margin: 10px 0;
+    color: #ccff00;
+    margin: 12px 0;
     background: #21262d;
-    padding: 10px 25px;
-    border-radius: 8px;
-    border: 1px solid #00f2fe;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 2px solid #ccff00;
+    min-width: 120px;
+}
+
+.botoes-jogador {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
 }
 
 .btn-ponto {
-    background: #38ef7d;
-    color: #000;
+    background: #22c55e;
+    color: #ffffff;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 16px;
     font-weight: bold;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1rem;
 }
 
-.btn-ponto:hover {
-    transform: scale(1.05);
+.btn-menos {
+    background: #ef4444;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-ponto:hover, .btn-menos:hover {
+    transform: scale(1.08);
 }
 
 .placar-divider {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 900;
     color: #ff0055;
 }
@@ -209,22 +227,23 @@ body {
 }
 
 .status-texto {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #ff0055;
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #38bdf8;
+    margin-bottom: 12px;
 }
 
 .btn-reset {
-    background: #21262d;
-    color: #8b949e;
-    border: 1px solid #30363d;
-    padding: 6px 14px;
+    background: #334155;
+    color: #ffffff;
+    border: 1px solid #64748b;
+    padding: 8px 18px;
     border-radius: 6px;
     cursor: pointer;
+    font-weight: bold;
 }
 
-/* ABAS INTERATIVAS DE TORNEIOS */
+/* ABAS */
 .tab-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -238,14 +257,14 @@ body {
     background: #21262d;
     color: #ffffff;
     border: 1px solid #30363d;
-    padding: 10px;
+    padding: 12px;
     font-weight: bold;
     border-radius: 6px;
     cursor: pointer;
 }
 
 .tab-btn.active {
-    background: #00f2fe;
+    background: #ccff00;
     color: #000000;
 }
 
@@ -260,7 +279,7 @@ body {
 
 .img-compacta {
     width: 100%;
-    max-height: 200px;
+    max-height: 220px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
@@ -269,17 +288,16 @@ body {
 /* TAGS */
 .tag {
     display: inline-block;
-    padding: 4px 10px;
+    padding: 4px 12px;
     border-radius: 12px;
     font-size: 0.8rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
-.duro { background: #00f2fe; color: #000; }
-.saibro { background: #ff5e00; color: #fff; }
-.grama { background: #38ef7d; color: #000; }
+.duro { background: #38bdf8; color: #000; }
+.saibro { background: #ea580c; color: #fff; }
+.grama { background: #22c55e; color: #000; }
 
-/* FOOTER */
 footer {
     width: 100%;
     text-align: center;
@@ -289,11 +307,7 @@ footer {
     border-top: 1px solid #30363d;
 }
 
-/* ===================================================
-   MODOS DE ACESSIBILIDADE VISUAL
-   =================================================== */
-
-/* ALTO CONTRASTE (Amarelo e Preto) */
+/* MODO ALTO CONTRASTE */
 body.alto-contraste {
     background-color: #000000 !important;
     color: #ffff00 !important;
@@ -314,37 +328,11 @@ body.alto-contraste a, body.alto-contraste .score-display {
     border-color: #ffff00 !important;
 }
 
-body.alto-contraste button {
-    background: #ffff00 !important;
-    color: #000000 !important;
-    font-weight: 900 !important;
-}
-
-/* MODO CLARO HIGH CONTRAST */
-body.modo-claro {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-}
-
-body.modo-claro .section-card,
-body.modo-claro #painel-acessibilidade,
-body.modo-claro .nav-bar,
-body.modo-claro .placar-box {
-    background-color: #f8f9fa !important;
-    border-color: #000000 !important;
-    color: #000000 !important;
-}
-
-body.modo-claro h1, body.modo-claro h2, body.modo-claro h3, body.modo-claro a {
-    color: #000000 !important;
-}
-
-/* FILTROS PARA DALTONISMO */
+/* DALTONISMO & DISLEXIA */
 body.protanopia { filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="f"><feColorMatrix type="matrix" values="0.567,0.433,0,0,0 0.558,0.442,0,0,0 0,0.242,0.758,0,0 0,0,0,1,0"/></filter></svg>#f'); }
 body.deuteranopia { filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="f"><feColorMatrix type="matrix" values="0.625,0.375,0,0,0 0.7,0.3,0,0,0 0,0.3,0.7,0,0 0,0,0,1,0"/></filter></svg>#f'); }
 body.tritanopia { filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="f"><feColorMatrix type="matrix" values="0.95,0.05,0,0,0 0,0.433,0.567,0,0 0,0.475,0.525,0,0 0,0,0,1,0"/></filter></svg>#f'); }
 
-/* FONTE PARA DISLEXIA / LEITURA FÁCIL */
 body.fonte-dislexia {
     font-family: 'Courier New', Courier, monospace !important;
     letter-spacing: 1px !important;
