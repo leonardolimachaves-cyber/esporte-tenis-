@@ -1,54 +1,236 @@
-/* Barra de Acessibilidade */
+/* RESET E CORES PRINCIPAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #0f172a; /* Fundo escuro esportivo */
+    color: #f8fafc;
+    line-height: 1.5;
+}
+
+/* ACCESSIBILIDADE BAR */
 #barra-acessibilidade {
-    background: #000;
-    padding: 8px 20px;
-    text-align: right;
+    background: #020617;
+    padding: 8px 5%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #1e293b;
+    font-size: 0.85rem;
 }
 
 #barra-acessibilidade button {
-    background: #ffffff;
-    color: #000000;
-    border: 2px solid #ffffff;
-    padding: 5px 10px;
-    margin-left: 5px;
-    cursor: pointer;
-    font-weight: bold;
+    background: #1e293b;
+    color: #ccff00; /* Verde bolinha de tênis */
+    border: 1px solid #ccff00;
+    padding: 4px 10px;
     border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-#barra-acessibilidade button:focus {
-    outline: 3px solid #ffeb3b;
+#barra-acessibilidade button:hover {
+    background: #ccff00;
+    color: #000;
 }
 
-/* Imagens dos Cards */
-.card-img {
+/* HERO SECTION Header chamativo */
+.hero {
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.95)), 
+                url('https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80') center/cover;
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 3px solid #ccff00;
+}
+
+.badge {
+    background-color: #ccff00;
+    color: #000;
+    font-weight: 900;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin: 15px 0 10px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* MENU FIXO */
+.nav-bar {
+    background: #1e293b;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-bar a {
+    color: #f8fafc;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.nav-bar a:hover {
+    color: #ccff00;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    color: #fff;
+    margin-bottom: 20px;
+    border-left: 4px solid #ccff00;
+    padding-left: 10px;
+}
+
+/* CARDS COM IMAGENS COMPACTAS */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #334155;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #ccff00;
+}
+
+/* IMAGEM REDUZIDA (120px de altura) */
+.img-wrapper {
+    height: 120px;
+    overflow: hidden;
+}
+
+.img-wrapper img {
     width: 100%;
-    height: 160px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 12px;
 }
 
-/* Estilo para Alto Contraste */
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    font-size: 1.1rem;
+    margin: 8px 0;
+    color: #fff;
+}
+
+.card-content p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* TAGS DOS PISOS */
+.tag {
+    font-size: 0.68rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+.duro { background: #0284c7; color: #fff; }
+.saibro { background: #ea580c; color: #fff; }
+.grama { background: #16a34a; color: #fff; }
+
+/* SEÇÃO DE REGRAS EM CAIXAS */
+.info-box-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.info-box {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #334155;
+}
+
+.info-box .icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.info-box h4 {
+    color: #ccff00;
+    margin-bottom: 5px;
+}
+
+.info-box p {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #020617;
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 50px;
+}
+
+/* ALTO CONTRASTE (ACESSIBILIDADE) */
 body.alto-contraste {
     background-color: #000000 !important;
     color: #ffffff !important;
 }
 
-body.alto-contraste header,
-body.alto-contraste nav,
-body.alto-contraste footer {
-    background-color: #111111 !important;
-    border-color: #ffffff !important;
+body.alto-contraste .card,
+body.alto-contraste .info-box,
+body.alto-contraste .nav-bar,
+body.alto-contraste #barra-acessibilidade {
+    background-color: #000000 !important;
+    border: 2px solid #ffffff !important;
 }
 
-body.alto-contraste .card {
-    background-color: #1a1a1a !important;
-    color: #ffffff !important;
-    border: 1px solid #ffffff;
-}
-
-body.alto-contraste a,
-body.alto-contraste h3 {
+body.alto-contraste h1, 
+body.alto-contraste h2, 
+body.alto-contraste h3, 
+body.alto-contraste h4,
+body.alto-contraste a {
     color: #ffff00 !important;
 }

@@ -3,78 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central do Tênis</title>
+    <title>Match Point | O Portal do Tênis</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div id="barra-acessibilidade" role="region" aria-label="Acessibilidade">
-        <button id="btn-contraste" onclick="toggleContraste()" aria-label="Alternar Alto Contraste">Alto Contraste</button>
-        <button onclick="alterarFonte(1)" aria-label="Aumentar tamanho do texto">A +</button>
-        <button onclick="alterarFonte(-1)" aria-label="Diminuir tamanho do texto">A -</button>
-    </div>
+    <!-- BARRA DE ACESSIBILIDADE FIXA -->
+    <aside id="barra-acessibilidade" aria-label="Painel de Acessibilidade">
+        <span>Acessibilidade:</span>
+        <button onclick="toggleContraste()" title="Modo Alto Contraste">◐ Contraste</button>
+        <button onclick="alterarFonte(1)" title="Aumentar Texto">A+</button>
+        <button onclick="alterarFonte(-1)" title="Diminuir Texto">A-</button>
+    </aside>
 
-    <header>
-        <h1>Central do Tênis</h1>
-        <p>Tudo sobre o universo das quadras</p>
+    <!-- CABEÇALHO HERO -->
+    <header class="hero">
+        <div class="hero-overlay">
+            <span class="badge">UNIVERSO DO TÊNIS</span>
+            <h1>MATCH POINT</h1>
+            <p>Estatísticas, regras e a emoção dos quatro Grand Slams em um só lugar.</p>
+        </div>
     </header>
 
-    <nav aria-label="Navegação Principal">
+    <!-- NAVEGAÇÃO -->
+    <nav class="nav-bar">
         <a href="#torneios">Torneios</a>
-        <a href="#regras">Regras Básicas</a>
+        <a href="#regras">Regras Rápidas</a>
+        <a href="#pontuacao">Pontuação</a>
     </nav>
 
     <main class="container">
-        <section id="torneios">
-            <h2>Os Quatro Grand Slams</h2>
+        <!-- TORNEIOS -->
+        <section id="torneios" class="section-block">
+            <h2 class="section-title">Os 4 Grand Slams</h2>
             <div class="card-grid">
                 
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=500&q=80" alt="Quadra azul de tênis no Australian Open" class="card-img">
-                    <h3>Australian Open</h3>
-                    <p><strong>Piso:</strong> Quadra Dura</p>
-                    <p>Jogado em Melbourne no início do ano sob forte calor. Conhecido pela velocidade e pisos sintéticos.</p>
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=400&q=80" alt="Australian Open">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag duro">Quadra Dura</span>
+                        <h3>Australian Open</h3>
+                        <p>Acontece em Melbourne em janeiro. Jogo extremamente veloz sob o calor australiano.</p>
+                    </div>
                 </article>
 
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1530915534664-4ac6423ca938?auto=format&fit=crop&w=500&q=80" alt="Quadra de saibro vermelho com bolinha de tênis" class="card-img">
-                    <h3>Roland Garros</h3>
-                    <p><strong>Piso:</strong> Saibro (Terra Batida)</p>
-                    <p>Disputado em Paris, é o torneio mais exigente fisicamente devido às trocas longas de bola.</p>
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1530915534664-4ac6423ca938?auto=format&fit=crop&w=400&q=80" alt="Roland Garros">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag saibro">Saibro</span>
+                        <h3>Roland Garros</h3>
+                        <p>O lendário torneio de Paris. Trocas de bola longas e exigência física no limite.</p>
+                    </div>
                 </article>
 
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=500&q=80" alt="Quadra de tênis na grama verde com raquete" class="card-img">
-                    <h3>Wimbledon</h3>
-                    <p><strong>Piso:</strong> Grama</p>
-                    <p>O torneio mais antigo do mundo, realizado em Londres. Exige trajes 100% brancos e jogo muito rápido.</p>
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=400&q=80" alt="Wimbledon">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag grama">Grama</span>
+                        <h3>Wimbledon</h3>
+                        <p>O templo sagrado em Londres. Tradição secular, trajes brancos e saque potente.</p>
+                    </div>
                 </article>
 
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=500&q=80" alt="Quadra de tênis com iluminação noturna" class="card-img">
-                    <h3>US Open</h3>
-                    <p><strong>Piso:</strong> Quadra Dura</p>
-                    <p>Realizado em Nova York, fecha a temporada dos Grand Slams com grandes jogos noturnos e muita energia.</p>
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=400&q=80" alt="US Open">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag duro">Quadra Dura</span>
+                        <h3>US Open</h3>
+                        <p>A energia de Nova York. Luzes noturnas, torcida vibrante e fechamento da temporada.</p>
+                    </div>
                 </article>
 
             </div>
         </section>
 
-        <section id="regras" style="margin-top: 40px;">
-            <h2>Regras Fundamentais</h2>
-            <div class="card" style="margin-top: 15px;">
-                <h3>Pontuação do Game</h3>
-                <p>A contagem de pontos segue a ordem: <strong>15, 30, 40 e Game</strong>.</p>
-                <p>Se o placar empatar em 40-40 (chamado de <em>Deuce</em> ou Igualdade), o jogador precisa abrir 2 pontos seguidos de vantagem (Vantagem e Game) para vencer.</p>
-
-                <h3 style="margin-top: 15px;">Sets e Partida</h3>
-                <p>Para vencer um Set, é preciso ganhar 6 games, com no mínimo 2 games de vantagem (ex: 6x4). Em caso de empate em 6x6, joga-se um desempate chamado <em>Tie-break</em>.</p>
+        <!-- REGRAS -->
+        <section id="regras" class="section-block">
+            <h2 class="section-title">Regras em Símbolos</h2>
+            <div class="info-box-grid">
+                <div class="info-box">
+                    <div class="icon">🎾</div>
+                    <h4>O Game</h4>
+                    <p>Inicia em 0 e avança para <strong>15 ➔ 30 ➔ 40 ➔ Game</strong>.</p>
+                </div>
+                <div class="info-box">
+                    <div class="icon">⚖️</div>
+                    <h4>Deuce</h4>
+                    <p>Empate em 40-40 exige <strong>2 pontos seguidos</strong> de vantagem.</p>
+                </div>
+                <div class="info-box">
+                    <div class="icon">🏆</div>
+                    <h4>O Set</h4>
+                    <p>Vence quem fecha <strong>6 games primeiro</strong> (aberto 2 games de diferença).</p>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Projeto Acessível sobre Tênis hospedado no GitHub Pages</p>
+        <p>© Match Point Tennis — Desenvolvido com GitHub Pages</p>
     </footer>
 
     <script>
@@ -82,11 +117,11 @@
             document.body.classList.toggle('alto-contraste');
         }
 
-        let tamanhoAtual = 100;
+        let tamanho = 100;
         function alterarFonte(delta) {
-            tamanhoAtual += delta * 10;
-            if (tamanhoAtual >= 80 && tamanhoAtual <= 150) {
-                document.body.style.fontSize = tamanhoAtual + '%';
+            tamanho += delta * 8;
+            if (tamanho >= 84 && tamanho <= 140) {
+                document.body.style.fontSize = tamanho + '%';
             }
         }
     </script>
