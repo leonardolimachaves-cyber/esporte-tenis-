@@ -3,115 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Match Point | O Portal do Tênis</title>
+    <title>Match Point | O Portal Acessível do Tênis</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- BARRA DE ACESSIBILIDADE FIXA -->
     <aside id="barra-acessibilidade" aria-label="Painel de Acessibilidade">
-        <span>Acessibilidade:</span>
-        <button onclick="toggleContraste()" title="Modo Alto Contraste">◐ Contraste</button>
-        <button onclick="alterarFonte(1)" title="Aumentar Texto">A+</button>
-        <button onclick="alterarFonte(-1)" title="Diminuir Texto">A-</button>
+        <span class="acess-label">♿ Acessibilidade:</span>
+        <button onclick="toggleContraste()" title="Modo Alto Contraste">◐ Alto Contraste</button>
+        <button onclick="alterarFonte(1)" title="Aumentar Texto">A +</button>
+        <button onclick="alterarFonte(-1)" title="Diminuir Texto">A -</button>
     </aside>
 
-    <!-- CABEÇALHO HERO -->
+    <!-- CABEÇALHO HERO CENTRALIZADO -->
     <header class="hero">
-        <div class="hero-overlay">
-            <span class="badge">UNIVERSO DO TÊNIS</span>
+        <div class="hero-container">
+            <span class="badge">O MUNDO DO TÊNIS</span>
             <h1>MATCH POINT</h1>
-            <p>Estatísticas, regras e a emoção dos quatro Grand Slams em um só lugar.</p>
+            <p>Os maiores torneios, regras essenciais e a paixão pelo esporte em um só lugar.</p>
         </div>
     </header>
 
-    <!-- NAVEGAÇÃO -->
+    <!-- NAVEGAÇÃO CENTRALIZADA -->
     <nav class="nav-bar">
         <a href="#torneios">Torneios</a>
         <a href="#regras">Regras Rápidas</a>
-        <a href="#pontuacao">Pontuação</a>
     </nav>
 
+    <!-- CONTEÚDO PRINCIPAL CENTRALIZADO -->
     <main class="container">
-        <!-- TORNEIOS -->
+
+        <!-- SEÇÃO TORNEIOS -->
         <section id="torneios" class="section-block">
-            <h2 class="section-title">Os 4 Grand Slams</h2>
+            <div class="header-center">
+                <h2 class="section-title">Os 4 Grand Slams</h2>
+                <div class="title-line"></div>
+            </div>
+
             <div class="card-grid">
                 
-                <article class="card">
+                <article class="card card-ao">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=400&q=80" alt="Australian Open">
+                        <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=400&q=80" alt="Quadra azul de tênis no Australian Open">
                     </div>
                     <div class="card-content">
                         <span class="tag duro">Quadra Dura</span>
                         <h3>Australian Open</h3>
-                        <p>Acontece em Melbourne em janeiro. Jogo extremamente veloz sob o calor australiano.</p>
+                        <p>Melbourne, Austrália. Conhecido pela velocidade e os jogos sob forte calor.</p>
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card card-rg">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1530915534664-4ac6423ca938?auto=format&fit=crop&w=400&q=80" alt="Roland Garros">
+                        <img src="https://images.unsplash.com/photo-1530915534664-4ac6423ca938?auto=format&fit=crop&w=400&q=80" alt="Quadra de saibro em Roland Garros">
                     </div>
                     <div class="card-content">
                         <span class="tag saibro">Saibro</span>
                         <h3>Roland Garros</h3>
-                        <p>O lendário torneio de Paris. Trocas de bola longas e exigência física no limite.</p>
+                        <p>Paris, França. O piso mais lento do circuito, exigindo trocas longas de bola.</p>
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card card-wb">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=400&q=80" alt="Wimbledon">
+                        <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=400&q=80" alt="Quadra na grama de Wimbledon">
                     </div>
                     <div class="card-content">
                         <span class="tag grama">Grama</span>
                         <h3>Wimbledon</h3>
-                        <p>O templo sagrado em Londres. Tradição secular, trajes brancos e saque potente.</p>
+                        <p>Londres, Reino Unido. O torneio mais antigo e tradicional do esporte.</p>
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card card-us">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=400&q=80" alt="US Open">
+                        <img src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=400&q=80" alt="Quadra com iluminação no US Open">
                     </div>
                     <div class="card-content">
                         <span class="tag duro">Quadra Dura</span>
                         <h3>US Open</h3>
-                        <p>A energia de Nova York. Luzes noturnas, torcida vibrante e fechamento da temporada.</p>
+                        <p>Nova York, EUA. Encerra a temporada com partidas noturnas vibrantes.</p>
                     </div>
                 </article>
 
             </div>
         </section>
 
-        <!-- REGRAS -->
+        <!-- SEÇÃO REGRAS -->
         <section id="regras" class="section-block">
-            <h2 class="section-title">Regras em Símbolos</h2>
+            <div class="header-center">
+                <h2 class="section-title">Regras em Destaque</h2>
+                <div class="title-line"></div>
+            </div>
+
             <div class="info-box-grid">
                 <div class="info-box">
-                    <div class="icon">🎾</div>
-                    <h4>O Game</h4>
-                    <p>Inicia em 0 e avança para <strong>15 ➔ 30 ➔ 40 ➔ Game</strong>.</p>
+                    <div class="icon-circle icon-yellow">🎾</div>
+                    <h4>Pontuação do Game</h4>
+                    <p>Inicia em 0 e evolui para <strong>15 ➔ 30 ➔ 40 ➔ Game</strong>.</p>
                 </div>
                 <div class="info-box">
-                    <div class="icon">⚖️</div>
-                    <h4>Deuce</h4>
+                    <div class="icon-circle icon-orange">⚖️</div>
+                    <h4>Igualdade (Deuce)</h4>
                     <p>Empate em 40-40 exige <strong>2 pontos seguidos</strong> de vantagem.</p>
                 </div>
                 <div class="info-box">
-                    <div class="icon">🏆</div>
-                    <h4>O Set</h4>
-                    <p>Vence quem fecha <strong>6 games primeiro</strong> (aberto 2 games de diferença).</p>
+                    <div class="icon-circle icon-cyan">🏆</div>
+                    <h4>Como Ganhar um Set</h4>
+                    <p>Vence quem fechar <strong>6 games primeiro</strong> com 2 games de vantagem.</p>
                 </div>
             </div>
         </section>
+
     </main>
 
+    <!-- RODAPÉ CENTRALIZADO -->
     <footer>
         <p>© Match Point Tennis — Desenvolvido com GitHub Pages</p>
     </footer>
 
+    <!-- SCRIPT DE ACESSIBILIDADE -->
     <script>
         function toggleContraste() {
             document.body.classList.toggle('alto-contraste');
