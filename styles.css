@@ -18,7 +18,7 @@ body {
     align-items: center;
 }
 
-/* PAINEL DE ACESSIBILIDADE DE ALTA VISIBILIDADE E BOTOES EXPANDIDOS */
+/* PAINEL DE ACESSIBILIDADE DE ALTA VISIBILIDADE */
 #painel-acessibilidade {
     width: 100%;
     background: #000000;
@@ -52,7 +52,7 @@ body {
     gap: 12px;
 }
 
-/* BOTÕES DE ACESSIBILIDADE EXPANDIDOS (MUITO MAIS FÁCEIS DE CLICAR) */
+/* BOTÕES DE ACESSIBILIDADE GRANDES */
 .btn-acess, .select-acess {
     background: #ffffff;
     color: #000000;
@@ -189,7 +189,6 @@ body {
     justify-content: center;
 }
 
-/* BOTÕES DO PLACAR MAIORES */
 .btn-ponto {
     background: #22c55e;
     color: #ffffff;
@@ -245,7 +244,7 @@ body {
     font-weight: bold;
 }
 
-/* ABAS */
+/* ABAS E EXIBIÇÃO DOS LOGOS */
 .tab-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -281,14 +280,24 @@ body {
     display: block;
 }
 
-/* PROPORÇÃO DE IMAGEM AJUSTADA */
-.img-compacta {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
+/* CAIXA RECIPIENTE PARA DESTACAR OS LOGOS */
+.logo-wrapper {
+    background: #ffffff;
+    padding: 20px;
     border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 15px;
-    border: 2px solid #30363d;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.img-logo {
+    max-width: 250px;
+    max-height: 180px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 /* TAGS */
